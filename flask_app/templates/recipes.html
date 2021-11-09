@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Recipe</title>
+</head>
+<body>
+    <h1>Welcome {{user.first_name}}!</h1>
+
+    <h2>{{recipe.name}}</h2>
+    <div class="main">
+    <p>Description: {{recipe.description}}</p>
+    <p>Under 30 Minutes? {{recipe.under_30}}</p>
+    <p>Instructions: {{recipe.instructions}}</p>
+    <p>Date Made: {{recipe.date_made}}</p>
+    </div>
+
+</body>
+</html>

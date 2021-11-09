@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Dash</title>
+</head>
+<body>
+    <h1>Welcome {{user.first_name}}!</h1>
+    <button><a class="navlist" href="/new">Create Recipe</a></button>
+    <button><a class="navlist" href="/logout">Logout</a></button>
+    <p>These are your recipes:</p>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Under 30 Minutes?</th>
+            <th>Actions</th>
+        </tr>
+        {% for one_recipe in user_recipes.recipes %}
+        <tr>
+            <td>{{one_recipe.name}}</td>
+            <td>{{one_recipe.under_30}}</td>
+            <td><a href="/recipes/{{one_recipe.id}}">View</a>| <a href="/edit/{{one_recipe.id}}">Edit</a> | <a href="/destroy/{{one_recipe.id}}">Delete</a> </td>
+        </tr>
+        {% endfor %}
+
+        </table>
+</body>
+</html>
